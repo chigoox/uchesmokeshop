@@ -1,5 +1,5 @@
 'use client'
-import { emailCollectorIMG, siteName, siteTag } from "@/app/META";
+import { siteName, siteTag } from "@/app/META";
 import { addEmailToList } from "@/app/myCodes/DatabaseUtils";
 import { Button, Input, Modal, ModalBody, ModalContent, ModalFooter, useDisclosure } from "@nextui-org/react";
 import Image from "next/image";
