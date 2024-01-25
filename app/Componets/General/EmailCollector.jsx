@@ -13,7 +13,7 @@ export const collectAndSendEmail = (email, setOpen) => {
 
 }
 
-const IMG = emailCollectorIMG
+const IMG = '/Images/emailCollectorIMG.jpeg'
 
 function EmailCollector({ isopen5, setOpen }) {
     const [email, setEmail] = useState()
