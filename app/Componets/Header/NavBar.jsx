@@ -101,14 +101,14 @@ function NavBar() {
 
                 </div>
             </div>
-            <nav className={`  trans   items-center  justify-evenly ${showCart ? 'justify-center' : 'justify-center'}  flex md:flex-row  gap-4 md:gap-0 ${false ? 'h-16 scale-100 ' : 'h-20 p-0 '} ${showCart ? 'h-16 scale-100 w-[50%] md:w-[100%] md:left-[0%]  left-[50%] ' : 'w-[100%] left-[0%] '}  rounded-t-2xl md:rounded-none  bg-black-900 text-white  md:bg-black-800 group   md:h-20`}>
-                {!showCart && <button onClick={toggleMobileMenu} className={`absolute -top-[4.7rem] bg-black rounded-full h-12 w-12 center p-2 ${showCart ? '' : ''}`}>
-                    <MenuButton menuOpen={showMobileMenu} />
-                </button>}
+            <nav className={`  trans   items-center  justify-evenly ${showCart ? 'justify-center' : 'justify-center'}  flex md:flex-row  gap-4 md:gap-0 ${false ? 'h-16 scale-100 ' : 'h-20 p-0 '} ${showCart ? 'h-16 scale-100 w-[50%] md:w-[100%] md:left-[0%]  left-[50%] ' : 'w-[100%] left-[0%] '}  rounded-t-2xl md:rounded-none  bg-black-900 text-white  md:bg-black-800 group relative   md:h-20`}>
 
-                {!NoCart && <button onClick={toggleCart} className={`trans bg-black rounded-full p-2 center  gap-4 absolute flex z-[9999] ${showCart ? 'right-[60%] -top-[3.5rem]' : 'right-2 sm:right-6 md:right-8  '}`}>
+                {!NoCart && <button onClick={toggleCart} className={`trans bg-black rounded-full p-2 center   gap-4  flex z-[9999]  right-2 sm:right-6 md:right-8 fixed `}>
                     {!showCart ? <AiOutlineShoppingCart size={32} /> : <AiOutlineClose size={32} />}
                 </button>}
+
+
+
 
                 <div className={`evenly text-3xl font-extrabold gap-5 relative ${showCart ? 'right-3' : ''}`}>
                     <Link className='center hover:border-b-2 border-opacity-0 hover:border-opacity-100 ' href={'/'}>{!showCart && 'Home'}</Link>

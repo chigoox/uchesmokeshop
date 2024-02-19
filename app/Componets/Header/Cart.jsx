@@ -10,6 +10,7 @@ import ShippinInfo from "../User/ShippinInfo";
 import { Card } from "@nextui-org/react";
 import { getRand } from "@/app/myCodes/Util";
 import { motion, useMotionValue, useTransform } from "framer-motion"
+import { AiOutlineClose } from "react-icons/ai";
 
 
 function Cart({ showCart, setShowCart }) {
@@ -75,6 +76,9 @@ function Cart({ showCart, setShowCart }) {
                 <button onClick={() => { dispatch({ type: "EMPTY_CART", value: null }) }}><Trash2Icon color="red" /></button>
 
             </div>
+            <button onClick={() => { setShowCart(!showCart) }} className={`trans bg-black  p-2 center w-full border-b text-white   flex z-[9999]  right-2 sm:right-6 md:right-8 `}>
+                <AiOutlineClose size={32} />
+            </button>
             <div className=" h-[80%] mb-4 m-auto  hidescroll overflow-y-scroll py-2 start-col gap-1">
                 {Object.values(lineItems).map(item => {
                     return (

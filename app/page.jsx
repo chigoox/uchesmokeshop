@@ -32,13 +32,7 @@ export default function Home() {
         <HomeProtuctCategories />
       </div>
 
-      <div className="center-col w-full overflow-hidden mt-32">
-        <h1 className="font-thin text-center text-2xl  mb-2">FOLLOW US ON INSTAGRAM</h1>
-        <div >
 
-
-        </div>
-      </div>
 
 
     </main>
