@@ -67,7 +67,7 @@ function Cart({ showCart, setShowCart }) {
             style={{ touchAction: "none" }}
             drag='x'
             dragConstraints={{ left: 0, right: 0, }}
-            className={`fixed z-[999]  md:top-8 top-0 trans  right-0 ${showCart ? 'w-[50vw] md:w-[25vw] p-2' : 'w-[0] P-0'} h-[100vh] bg-black`}>
+            className={`fixed z-[999]  md:top-0 top-0 trans  right-0 ${showCart ? 'w-[50vw] md:w-[25vw] p-2' : 'w-[0] P-0'} h-[100vh] bg-black`}>
             {(getShippingWindow && showCart) && <div className="absolute w-auto z-50  -left-40 ">
                 <ShippinInfo user={user} forCheckOut={getShippingInfo} />
             </div>}

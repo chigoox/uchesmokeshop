@@ -17,7 +17,6 @@ export const ProductsList = ({ category, limit, list, search }) => {
     }, [category])
 
     const categoryList = useFilterEmptyCategory()
-    console.log(categoryList)
 
 
     return (

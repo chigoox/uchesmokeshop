@@ -51,8 +51,9 @@ function Admin() {
             productData?.category
         ) {
             try {
+                console.log(priceData)
                 await createProduct(productData, priceData)
-                console.log(productData, priceData)
+
                 setProductData({ productName: '', productDesc: '', productFeat: '', category: '', price: '', isNew: false, isBestSelling: false, })
                 setPriceData({ price0: { priceName: '', qty: '', amount: '' } })
                 setPriceIDCount(1)

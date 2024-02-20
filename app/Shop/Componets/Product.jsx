@@ -41,7 +41,7 @@ const Product = ({ product, forThis, category }) => {
     const { dispatch } = useCartContext()
 
 
-
+    console.log(itemData)
 
 
 
@@ -51,6 +51,9 @@ const Product = ({ product, forThis, category }) => {
     }).filter(Boolean)[0]
 
 
+    const canAddToCart = () => {
+        return thisProduct?.metadata.qty >= 1
+    }
 
 
     const filteredPrice = thisProduct?.metadata?.price?.replace('$', '')
@@ -62,10 +65,11 @@ const Product = ({ product, forThis, category }) => {
 
 
 
+
     const [prices, setPrices] = useState({})
     const [itemToCheckOut, setItemToCheckOut] = useState({ priceID: 0, Qty: 0, images: [] })
     const addToCart = () => {
-        if (itemToCheckOut.priceID && itemToCheckOut.Qty > 0) dispatch({ type: "ADD_TO_CART", value: itemToCheckOut })
+        if (itemToCheckOut.priceID && itemToCheckOut.Qty > 0 && canAddToCart()) dispatch({ type: "ADD_TO_CART", value: itemToCheckOut })
     }
     const variants = Object.values(prices).map(i => {
         return i

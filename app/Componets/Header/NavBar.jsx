@@ -15,6 +15,7 @@ import { NavigationEvents } from "../NavigationEvents"
 import Cart from './Cart'
 import Banner from './Componets/Banner'
 import useScrollPosition from '@/app/Hooks/useScrollPosition'
+import useWindowDimensions from '@/app/Hooks/useGetWindowDeimentions'
 
 const jost = Jost({
     weight: '400',
@@ -32,6 +33,7 @@ function NavBar() {
 
     let scrollPosition = 1
     scrollPosition = useScrollPosition()
+    const { height, width } = useWindowDimensions();
 
     const NoCart = usePathname().includes('Checkout')
 
@@ -41,7 +43,7 @@ function NavBar() {
     }, [])
 
 
-
+    console.log(width)
 
     const toggleMobileMenu = () => {
         setShowMobileMenu(!showMobileMenu)
@@ -103,7 +105,7 @@ function NavBar() {
             </div>
             <nav className={`  trans   items-center  justify-evenly ${showCart ? 'justify-center' : 'justify-center'}  flex md:flex-row  gap-4 md:gap-0 ${false ? 'h-16 scale-100 ' : 'h-20 p-0 '} ${showCart ? 'h-16 scale-100 w-[50%] md:w-[100%] md:left-[0%]  left-[50%] ' : 'w-[100%] left-[0%] '}  rounded-t-2xl md:rounded-none  bg-black-900 text-white  md:bg-black-800 group relative   md:h-20`}>
 
-                {!NoCart && <button onClick={toggleCart} className={`trans bg-black rounded-full p-2 center   gap-4  flex z-[9999]  right-2 sm:right-6 md:right-8 fixed `}>
+                {(!NoCart && width <= 768) && <button onClick={toggleCart} className={`trans bg-black rounded-full p-2 center   gap-4  flex z-[9999]  right-2 sm:right-6 md:right-8 fixed `}>
                     {!showCart ? <AiOutlineShoppingCart size={32} /> : <AiOutlineClose size={32} />}
                 </button>}
 
